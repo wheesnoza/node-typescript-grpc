@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package product;
+
+import "google/protobuf/empty.proto";
+
+enum ProductStatus {
+    UNKNOWN = 0;
+    AVAILABLE = 1;
+    UNAVAIABLE = 2;
+}
+
+message Product {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    int32 price = 4;
+    float raiting = 5;
+    ProductStatus status = 6;
+}
+
+message ProductRequest {
+    string product_id = 1;
+}
+
+service Products {
+    rpc FindProduct(ProductRequest) returns (Product) {};    
+    rpc CreateProducts(stream Product) returns (google.protobuf.Empty){};
+    rpc GetProducts(google.protobuf.Empty) returns (stream Product){};
+}
