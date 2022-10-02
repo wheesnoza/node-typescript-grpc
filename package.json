@@ -1,7 +1,7 @@
 {
   "name": "node-typescript-grpc",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple project to learn about server/client using gRPC with Node.js and typescript.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
